@@ -15,13 +15,13 @@ const mainDiv = {
   maxWidth: "800px",
   display: "flex",
   flexDirection: "column",
-  gap: "2rem",
+  gap: "1.5rem",
   margin: "0 auto",
   alignItems: "center",
 } as React.CSSProperties
 
 const finaleDiv = {
-  fontSize: "2rem", 
+  fontSize: "3rem", 
   textAlign: "center"
 } as React.CSSProperties
 
@@ -29,6 +29,14 @@ const resetBtn = {
   display: "block",
   margin: "0 auto",
   marginTop: "1rem",
+  padding: ".5rem",
+  fontSize: "1.5rem",
+} as React.CSSProperties
+
+const randomizerBtn = {
+  display: "block",
+  margin: "0 auto",
+  marginTop: "2rem",
   padding: ".5rem",
   fontSize: "1.5rem",
 } as React.CSSProperties
@@ -42,13 +50,14 @@ const titleDiv = {
   flexDirection: "column",
   marginBottom: "-3rem",
   gap: "1rem",
+  fontSize: "1.5rem",
   alignItems: "center",
 } as React.CSSProperties
 
 const revealDiv = {
   fontSize: "1rem", 
   textAlign: "center", 
-  marginBottom: "-3rem"
+  marginBottom: "-1rem"
 } as React.CSSProperties
 
 // ======================
@@ -137,6 +146,21 @@ const wordRandomizer = () => {
   //   setLanguage(e.target.value)
   // }
 
+  // reset noise
+  const resetNoise = new Audio("https://freesound.org/data/previews/269/269026_5094889-lq.mp3")
+
+  // winner noise
+  const winnerNoise = new Audio("https://freesound.org/data/previews/511/511484_6890478-lq.mp3")
+
+  // play winnerNoise when isWinner displays
+  isWinner && winnerNoise.play()
+
+  // loser noise
+  const loserNoise = new Audio("https://freesound.org/s/400581/")
+
+  // play loserNoise when isLoser displays
+  isLoser && loserNoise.play()
+
   return (
     <div style={mainDiv}>
       {/* h1 only visible when game hasn't started */}
@@ -146,26 +170,25 @@ const wordRandomizer = () => {
       <div style={finaleDiv}>
         {
           isWinner && 
-            <div>
-              <div>Winner winner! 
-                <br />
-                Grab a chicken dinner
-              </div>
-              <div style={{ fontSize: "20px" }}>🐓🍽🐔 - Reset to play again
-              </div>
+          <div>
+              <div style={{ marginBottom: "10px" }}>Winner winner gets the dinner!</div>
+              <div style={{ fontSize: "15px" }}>🐓🍽🐔 - Reset to play again</div>
             </div>
         }
         {
           isLoser && 
             <div>
-              <div>Mamaaa! You killed a man</div>
-              <div style={{ fontSize: "20px" }}>LOL u suck - Reset to try again
+              <div style={{ marginBottom: "10px" }}>Mamaaa! I just killed a man</div>
+              <div style={{ fontSize: "15px" }}>LOL 🤦🏻‍♂️ u suck - Reset to try again
               </div>
             </div>
         }
       </div>
     
-
+    {/* add ticking audio whenever keyboard is pressed */}
+    {/* const ticking = "https://www.soundjay.com/button/sounds/button-3.mp3" 
+    <audio src={ticking} autoPlay></audio> */}
+    
       {/* selectLanguage Button */}
       {/* <div>
         <select value={language} onChange={selectLanguage}>
@@ -180,7 +203,7 @@ const wordRandomizer = () => {
       </div> */}
 
       {/* Word Randomizer Button */}
-      <button style={resetBtn} onClick={() => setWordToGuess(wordRandomizer)}>
+      <button style={randomizerBtn} onClick={() => setWordToGuess(wordRandomizer)}>
         Random Word
       </button>
       <HangmanDrawing numberOfGuesses={incorrectLetters.length} />
@@ -188,7 +211,12 @@ const wordRandomizer = () => {
       {/* Reset Button after game */}
       {
         isWinner || isLoser ? (
-          <button style={resetBtn} onClick={reset}>
+          <button style={resetBtn} onClick={() => {
+              reset()
+              resetNoise.play()
+              }
+            }
+          >
             Reset
           </button>
         ) : null

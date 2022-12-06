@@ -9,7 +9,6 @@ type HangmanWordProps = {
 // ======================
 const letterDiv = {
   display: "flex",
-  // width: "100%",
   gap: ".25em",
   fontSize: "6rem",
   fontWeight: "bold",

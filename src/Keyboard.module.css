@@ -24,3 +24,25 @@
 .btn:focus:not(:disabled) {
   background-color: hsl(200, 100%, 75%);
 }
+
+.keyboard__div {
+  display: grid;
+  grid-template-columns: repeat(10, 1fr);
+  grid-gap: 0.5rem;
+  padding: 0.5rem;
+  overflow-x: scroll;
+  overflow-y: scroll;
+  align-items: center;
+}
+/* } */
+
+/* keyboard on mobile */
+@media (max-width: 600px) {
+  .keyboard__div {
+    /* grid-template-columns: repeat(auto-fill, minmax(45px, 1fr)); */
+    grid-template-columns: repeat(6, 1fr);
+    overflow-x: scroll;
+    overflow-y: scroll;
+    height: 200px;
+  }
+}

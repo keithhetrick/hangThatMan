@@ -36,17 +36,14 @@ type KeyboardProps = {
   addGuessedLetter: (letter: string) => void
 }
 
-// ======================
-// Styling for Keyboard divs
-// ======================
-const keyboardDiv = {
-  display: "grid",
-  gridTemplateColumns: "repeat(auto-fit, minmax(75px, 1fr))",
-  gap: ".5rem",
-  overflowY: "scroll",
-  overflowX: "scroll",
-  height: "280px",
-} as React.CSSProperties
+// create a function that plays audio at every keyboard click
+// export const useAudio = (url: string) => {
+//   const [audio] = useState(new Audio(url))
+//   const play = () => {
+//     audio.play()
+//   }
+//   return play
+// }
 
 
 export function Keyboard({
@@ -56,7 +53,7 @@ export function Keyboard({
   disabled = false,
 }: KeyboardProps) {
   return (
-    <div style={keyboardDiv}>
+    <div className={styles.keyboard__div}>
       {KEYS.map(key => {
         const isActive = activeLetters.includes(key)
         const isInactive = inactiveLetters.includes(key)

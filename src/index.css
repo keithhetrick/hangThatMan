@@ -1,5 +1,15 @@
 @import url(https://fonts.googleapis.com/css?family=Press+Start+2P);
 
+/* change text to 8-bit */
+* {
+  font-family: "Press Start 2P", cursive;
+  font-size: 80%;
+}
+
+/* * {
+  height: 90%;
+} */
+
 /* morphing background colors */
 body {
   background: linear-gradient(
@@ -26,6 +36,11 @@ body {
     background-position: 0% 50%;
   }
 }
+/* 
+#keyboard__div {
+  gridtemplatecolumns: "repeat(auto-fill, minmax(45px, 1fr))";
+  grid-template-columns: "repeat(auto-fill, minmax(45px, 1fr))";
+} */
 
 /* moving background on mobile */
 @media (max-width: 600px) {
@@ -47,8 +62,9 @@ body {
 /* letter__div on mobile */
 @media (max-width: 600px) {
   #letter__div {
+    width: 100%;
+    text-align: center;
     overflow-y: scroll;
     overflow-x: scroll;
-    width: 100%;
   }
 }
