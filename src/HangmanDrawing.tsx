@@ -18,6 +18,24 @@ const HEAD = (
     {/* ====================== */}
     {/* Facial Expressions */}
     {/* ====================== */}
+  </div>
+)
+const FACIAL_EXPRESSION = (
+  <div 
+    style={{
+      width: "50px",
+      height: "50px",
+      borderRadius: "100%",
+      border: "10px solid black",
+      position: "absolute",
+      top: "50px",
+      right: "-30px",
+      // rotate: "45deg",
+    }}
+  >
+    {/* ====================== */}
+    {/* Facial Expressions */}
+    {/* ====================== */}
     <div id="facial__expression">
       <div id="eyes">
         <div id="left__eye">
@@ -188,7 +206,7 @@ const HAT = (
           width: "25px", 
           position: "absolute", 
           right: "-13px", 
-          top: "-5px", 
+          top: "-8px", 
           borderRadius: "100%", 
           background: "lightGreen",
           // zIndex: 1,
@@ -247,6 +265,7 @@ export function HangmanDrawing({ numberOfGuesses }: HangmanDrawingProps) {
       <div id="hangman__container" style={positioning}>
         {/* show HAT only when all body parts are visible */}
         {numberOfGuesses === 6 && HAT}
+        {numberOfGuesses === 6 && FACIAL_EXPRESSION}
         {/* {HAT} */}
         {BODY_PARTS.slice(0, numberOfGuesses)}
           <div style={smallVertical} />

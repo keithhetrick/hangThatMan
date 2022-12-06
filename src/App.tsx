@@ -140,7 +140,7 @@ const wordRandomizer = () => {
   return (
     <div style={mainDiv}>
       {/* h1 only visible when game hasn't started */}
-      {guessedLetters.length !== 0 ? null : <h1 style={titleDiv}>Hang...That...MAN!</h1> }
+      {guessedLetters.length !== 0 ? null : <h1 style={titleDiv}> </h1> }
 
       {/* Finale Text */}
       <div style={finaleDiv}>
