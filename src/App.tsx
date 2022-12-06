@@ -3,7 +3,6 @@ import { HangmanDrawing } from "./HangmanDrawing"
 import { HangmanWord } from "./HangmanWord"
 import { Keyboard } from "./Keyboard"
 import words from "./wordList.json"
-// import "./App.css"
 
 function getWord() {
   return words[Math.floor(Math.random() * words.length)]
@@ -58,6 +57,7 @@ function App() {
   const [wordToGuess, setWordToGuess] = useState(getWord)
   const [guessedLetters, setGuessedLetters] = useState<string[]>([])
   const [reveal, setReveal] = useState(false)
+  // const [language, setLanguage] = useState("en")
 
   // word randomizer button using getWord() function and resets game
 const wordRandomizer = () => {
@@ -132,6 +132,11 @@ const wordRandomizer = () => {
     setReveal(currentReveal => !currentReveal)
   }
 
+  // prompt that selectsLanguage
+  // const selectLanguage = (e: React.ChangeEvent<HTMLSelectElement>) => {
+  //   setLanguage(e.target.value)
+  // }
+
   return (
     <div style={mainDiv}>
       {/* h1 only visible when game hasn't started */}
@@ -160,6 +165,20 @@ const wordRandomizer = () => {
         }
       </div>
     
+
+      {/* selectLanguage Button */}
+      {/* <div>
+        <select value={language} onChange={selectLanguage}>
+          <option value="en">English</option>
+          <option value="de">Deutsch</option>
+          <option value="es">Español</option>
+          <option value="fr">Français</option>
+          <option value="it">Italiano</option>
+          <option value="pt">Português</option>
+          <option value="nl">Nederlands</option>
+        </select>
+      </div> */}
+
       {/* Word Randomizer Button */}
       <button style={resetBtn} onClick={() => setWordToGuess(wordRandomizer)}>
         Random Word

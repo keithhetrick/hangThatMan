@@ -1,6 +1,6 @@
 # Hang That Man!
 
-Guess correctly, don't kill a man.
+Get it right, save a life ❤️.
 
 Built with React, TypeScript & deployed on AWS.
 
