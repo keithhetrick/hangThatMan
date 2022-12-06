@@ -8,6 +8,6 @@ Built with React, TypeScript & deployed on AWS.
 
 <img width="963" alt="Screen Shot 2022-12-06 at 2 00 07 AM" src="https://user-images.githubusercontent.com/104343338/205854133-98edbf17-71a5-4365-b296-0abda9bd9de4.png">
 
-<img width="961" alt="Screen Shot 2022-12-06 at 2 00 53 AM" src="https://user-images.githubusercontent.com/104343338/205854256-5c8fefd4-b992-49a8-8c69-5d21262a7b19.png">
+<img width="961" alt="Screen Shot 2022-12-06 at 11 45 31 AM" src="https://user-images.githubusercontent.com/104343338/205984280-c46f1439-9488-41bc-add2-8bdc583f52f7.png">
 
-<img width="961" alt="Screen Shot 2022-12-06 at 2 01 07 AM" src="https://user-images.githubusercontent.com/104343338/205854299-d9d1ab0d-49a7-4a18-9536-2cb1ed80fd41.png">
+<img width="960" alt="Screen Shot 2022-12-06 at 11 46 13 AM" src="https://user-images.githubusercontent.com/104343338/205984413-e5458259-2bda-4f08-8b13-2a3616178f88.png">
