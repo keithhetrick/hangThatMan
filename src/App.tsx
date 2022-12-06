@@ -3,7 +3,7 @@ import { HangmanDrawing } from "./HangmanDrawing"
 import { HangmanWord } from "./HangmanWord"
 import { Keyboard } from "./Keyboard"
 import words from "./wordList.json"
-import "./App.css"
+// import "./App.css"
 
 function getWord() {
   return words[Math.floor(Math.random() * words.length)]
@@ -62,7 +62,7 @@ function App() {
   // word randomizer button using getWord() function and resets game
 const wordRandomizer = () => {
   const randomWord = getWord()
-  setGuessedLetters([]),
+  setGuessedLetters([])
   setWordToGuess(getWord())
   setReveal(false)
   return randomWord
@@ -100,6 +100,7 @@ const wordRandomizer = () => {
     return () => {
       document.removeEventListener("keypress", handler)
     }
+    // eslint-disable-next-line
   }, [guessedLetters])
 
   useEffect(() => {
