@@ -31,6 +31,7 @@ const resetBtn = {
   marginTop: "1rem",
   padding: ".5rem",
   fontSize: "1.5rem",
+  cursor: "pointer",
 } as React.CSSProperties
 
 const randomizerBtn = {
@@ -147,13 +148,13 @@ const wordRandomizer = () => {
   // }
 
   // reset noise
-  const resetNoise = new Audio("https://freesound.org/data/previews/269/269026_5094889-lq.mp3")
+  // const resetNoise = new Audio("https://freesound.org/data/previews/269/269026_5094889-lq.mp3")
 
   // winner noise
-  const winnerNoise = new Audio("https://freesound.org/data/previews/511/511484_6890478-lq.mp3")
+  // const winnerNoise = new Audio("https://freesound.org/data/previews/511/511484_6890478-lq.mp3")
 
   // play winnerNoise when isWinner displays
-  isWinner && winnerNoise.play()
+  // isWinner && winnerNoise.play()
 
   // loser noise
   const loserNoise = new Audio("https://freesound.org/s/400581/")
@@ -203,29 +204,29 @@ const wordRandomizer = () => {
       </div> */}
 
       {/* Word Randomizer Button */}
-      <button style={randomizerBtn} onClick={() => setWordToGuess(wordRandomizer)}>
+      <div className="button__class" style={randomizerBtn} onClick={() => setWordToGuess(wordRandomizer)}>
         Random Word
-      </button>
+      </div>
       <HangmanDrawing numberOfGuesses={incorrectLetters.length} />
 
       {/* Reset Button after game */}
       {
         isWinner || isLoser ? (
-          <button style={resetBtn} onClick={() => {
+          <div className="button__class" style={resetBtn} onClick={() => {
               reset()
-              resetNoise.play()
+              // resetNoise.play()
               }
             }
           >
             Reset
-          </button>
+          </div>
         ) : null
       }
 
       {/* Reveal Word Button */}
-          <button style={resetBtn} onClick={showHiddenWord}>
+          <div className="button__class" style={resetBtn} onClick={showHiddenWord}>
             Show Hidden Word
-          </button>
+          </div>
         {
           reveal && (
             <div style={revealDiv}>

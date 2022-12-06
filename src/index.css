@@ -42,6 +42,31 @@ body {
   grid-template-columns: "repeat(auto-fill, minmax(45px, 1fr))";
 } */
 
+/* styling for div button */
+.button__class {
+  cursor: pointer;
+  box-sizing: border-box;
+  margin: 0em;
+  padding: 1px 6px;
+  border-width: 2px;
+  border-style: outset;
+  border-color: buttonborder;
+  border-image: initial;
+  background-color: #efefef;
+}
+
+/* change div button style on hover */
+.button__class:hover {
+  background-color: #e0e0e0;
+  transform: translateY(-0.1em);
+  transition: 0.2s;
+}
+
+.button__class:active {
+  background-color: #d0d0d0;
+  transition: 0.2s;
+}
+
 /* moving background on mobile */
 @media (max-width: 600px) {
   body {

@@ -16,6 +16,12 @@
   color: white;
 }
 
+.btn:hover {
+  background-color: #e0e0e0;
+  transform: translateY(-0.1em);
+  transition: 0.2s;
+}
+
 .btn.inactive {
   opacity: 0.3;
 }
