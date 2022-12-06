@@ -9,6 +9,7 @@ type HangmanWordProps = {
 // ======================
 const letterDiv = {
   display: "flex",
+  // width: "100%",
   gap: ".25em",
   fontSize: "6rem",
   fontWeight: "bold",
@@ -24,7 +25,7 @@ export function HangmanWord({
   reveal = false,
 }: HangmanWordProps) {
   return (
-    <div style={letterDiv}>
+    <div id="letter__div" style={letterDiv}>
       {wordToGuess.split("").map((letter, index) => (
         <span style={{ borderBottom: ".1em solid black" }} key={index}>
           <span

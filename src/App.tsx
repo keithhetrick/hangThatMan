@@ -120,9 +120,11 @@ const wordRandomizer = () => {
     }
   }, [])
 
+  // prompt that resets game
   const reset = () => {
     setGuessedLetters([])
     setWordToGuess(getWord())
+    setReveal(false)
   }
 
   // prompt that toggles boolean value
@@ -137,8 +139,25 @@ const wordRandomizer = () => {
 
       {/* Finale Text */}
       <div style={finaleDiv}>
-        {isWinner && "Hey! Get yourself a chicken dinner! - Reset to try again"}
-        {isLoser && "LOL u suck - Reset to try again"}
+        {
+          isWinner && 
+            <div>
+              <div>Winner winner! 
+                <br />
+                Grab a chicken dinner
+              </div>
+              <div style={{ fontSize: "20px" }}>🐓🍽🐔 - Reset to play again
+              </div>
+            </div>
+        }
+        {
+          isLoser && 
+            <div>
+              <div>Mamaaa! You killed a man</div>
+              <div style={{ fontSize: "20px" }}>LOL u suck - Reset to try again
+              </div>
+            </div>
+        }
       </div>
     
       {/* Word Randomizer Button */}

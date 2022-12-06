@@ -43,7 +43,11 @@ const keyboardDiv = {
   display: "grid",
   gridTemplateColumns: "repeat(auto-fit, minmax(75px, 1fr))",
   gap: ".5rem",
+  overflowY: "scroll",
+  overflowX: "scroll",
+  height: "280px",
 } as React.CSSProperties
+
 
 export function Keyboard({
   activeLetters,
