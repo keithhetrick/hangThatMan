@@ -76,12 +76,12 @@
 }
 
 /* keyboard on mobile - bp 4 */
-@media (max-width: 380px) {
+@media (max-width: 375px) {
   .keyboard__div {
     /* grid-template-columns: repeat(auto-fill, minmax(45px, 1fr)); */
     grid-template-columns: repeat(6, 1fr);
     overflow-x: scroll;
     overflow-y: scroll;
-    height: 350px;
+    height: 230px;
   }
 }

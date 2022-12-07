@@ -194,3 +194,23 @@ body {
     border-width: 2px;
   }
 }
+
+/* mobile for 375px -- MY PHONE */
+@media (max-width: 375px) {
+  /* remaining__guesses on mobile */
+  #remaining__guesses {
+    font-size: 1.8rem;
+    position: sticky;
+    top: 0;
+    z-index: 1;
+    margin-left: 59vw;
+  }
+
+  /* letter__div on mobile */
+  .button__class {
+    cursor: pointer;
+    margin: 0em;
+    font-size: 1rem;
+    border-width: 2px;
+  }
+}

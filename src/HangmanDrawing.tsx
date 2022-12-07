@@ -3,8 +3,6 @@ import styles from "./HangmanDrawing.module.css"
 // ======================
 // Styling for Hangman drawing
 // ======================
-const HEAD = <div id={styles.character__head} />
-
 const FACIAL_EXPRESSION = (
   <div 
     style={{
@@ -88,6 +86,7 @@ const FACIAL_EXPRESSION = (
   </div>
 )
 
+const HEAD = <div id={styles.character__head} />
 const BODY = <div id={styles.character__body} />
 const RIGHT_ARM = <div id={styles.character__right__arm} />
 const LEFT_ARM = <div id={styles.character__left__arm} />

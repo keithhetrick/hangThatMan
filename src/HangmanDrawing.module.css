@@ -66,7 +66,7 @@
   }
 }
 
-/* gallows on 400px mobile */
+/* gallows on 375px mobile -- MY PHONE */
 @media screen and (max-width: 400px) {
   #gallows__small__vertical {
     height: 50px;
@@ -80,7 +80,7 @@
 
   #gallows__top__horizontal {
     height: 10px;
-    width: 118px;
+    width: 105px;
     background: black;
     margin-left: 0;
     margin-left: 70px;
