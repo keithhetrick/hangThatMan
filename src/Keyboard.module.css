@@ -49,6 +49,6 @@
     grid-template-columns: repeat(6, 1fr);
     overflow-x: scroll;
     overflow-y: scroll;
-    height: 200px;
+    height: 250px;
   }
 }

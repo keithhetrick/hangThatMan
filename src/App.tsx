@@ -2,10 +2,17 @@ import { useCallback, useEffect, useState } from "react"
 import { HangmanDrawing } from "./HangmanDrawing"
 import { HangmanWord } from "./HangmanWord"
 import { Keyboard } from "./Keyboard"
-import words from "./wordList.json"
+import englishWords from "./wordLists/englishWordList.json"
+// import spanishWords from "./wordLists/spanishWordList.json"
 
 function getWord() {
-  return words[Math.floor(Math.random() * words.length)]
+  // connect language button to this function
+  // if (language === "en") {
+  //   return englishWords[Math.floor(Math.random() * englishWords.length)]
+  // } else if (language === "es") {
+  //   return spanishWords[Math.floor(Math.random() * spanishWords.length)]
+
+  return englishWords[Math.floor(Math.random() * englishWords.length)]
 }
 
 // ======================
@@ -18,11 +25,6 @@ const mainDiv = {
   gap: "1.5rem",
   margin: "0 auto",
   alignItems: "center",
-} as React.CSSProperties
-
-const finaleDiv = {
-  fontSize: "3rem", 
-  textAlign: "center"
 } as React.CSSProperties
 
 const resetBtn = {
@@ -44,15 +46,6 @@ const randomizerBtn = {
 
 const keyboardDiv = {
   alignSelf: "stretch"
-} as React.CSSProperties
-
-const titleDiv = {
-  display: "flex",
-  flexDirection: "column",
-  marginBottom: "-3rem",
-  gap: "1rem",
-  fontSize: "1.5rem",
-  alignItems: "center",
 } as React.CSSProperties
 
 const revealDiv = {
@@ -78,181 +71,181 @@ const wordRandomizer = () => {
   return randomWord
 }
 
-  const incorrectLetters = guessedLetters.filter(
-    letter => !wordToGuess.includes(letter)
-  )
+const incorrectLetters = guessedLetters.filter(
+  letter => !wordToGuess?.includes(letter)
+)
 
-  const isLoser = incorrectLetters.length >= 6
-  const isWinner = wordToGuess
-    .split("")
-    .every(letter => guessedLetters.includes(letter))
+const isLoser = incorrectLetters.length >= 6
+const isWinner = wordToGuess && wordToGuess
+  .split("")
+  .every(letter => guessedLetters.includes(letter))
 
-  const addGuessedLetter = useCallback(
-    (letter: string) => {
-      if (guessedLetters.includes(letter) || isLoser || isWinner) return
+const addGuessedLetter = useCallback(
+  (letter: string) => {
+    if (guessedLetters.includes(letter) || isLoser || isWinner) return
 
-      setGuessedLetters(currentLetters => [...currentLetters, letter])
-    },
-    [guessedLetters, isWinner, isLoser]
-  )
+    setGuessedLetters(currentLetters => [...currentLetters, letter])
+  },
+  [guessedLetters, isWinner, isLoser]
+)
 
-  useEffect(() => {
-    const handler = (e: KeyboardEvent) => {
-      const key = e.key
-      if (!key.match(/^[a-z]$/)) return
+useEffect(() => {
+  const handler = (e: KeyboardEvent) => {
+    const key = e.key
+    if (!key.match(/^[a-z]$/)) return
 
-      e.preventDefault()
-      addGuessedLetter(key)
-    }
+    e.preventDefault()
+    addGuessedLetter(key)
+  }
 
-    document.addEventListener("keypress", handler)
+  document.addEventListener("keypress", handler)
 
-    return () => {
-      document.removeEventListener("keypress", handler)
-    }
-    // eslint-disable-next-line
-  }, [guessedLetters])
+  return () => {
+    document.removeEventListener("keypress", handler)
+  }
+  // eslint-disable-next-line
+}, [guessedLetters])
 
-  useEffect(() => {
-    const handler = (e: KeyboardEvent) => {
-      const key = e.key
-      if (key !== "Enter") return
+useEffect(() => {
+  const handler = (e: KeyboardEvent) => {
+    const key = e.key
+    if (key !== "Enter") return
 
-      e.preventDefault()
-      setGuessedLetters([])
-      setWordToGuess(getWord())
-    }
-
-    document.addEventListener("keypress", handler)
-
-    return () => {
-      document.removeEventListener("keypress", handler)
-    }
-  }, [])
-
-  // prompt that resets game
-  const reset = () => {
+    e.preventDefault()
     setGuessedLetters([])
     setWordToGuess(getWord())
-    setReveal(false)
   }
 
-  // prompt that toggles boolean value
-  const showHiddenWord = () => {
-    setReveal(currentReveal => !currentReveal)
+  document.addEventListener("keypress", handler)
+
+  return () => {
+    document.removeEventListener("keypress", handler)
   }
+}, [])
 
-  // prompt that selectsLanguage
-  // const selectLanguage = (e: React.ChangeEvent<HTMLSelectElement>) => {
-  //   setLanguage(e.target.value)
-  // }
+// prompt that resets game
+const reset = () => {
+  setGuessedLetters([])
+  setWordToGuess(getWord())
+  setReveal(false)
+}
 
-  // reset noise
-  // const resetNoise = new Audio("https://freesound.org/data/previews/269/269026_5094889-lq.mp3")
+// prompt that toggles boolean value
+const showHiddenWord = () => {
+  setReveal(currentReveal => !currentReveal)
+}
 
-  // winner noise
-  // const winnerNoise = new Audio("https://freesound.org/data/previews/511/511484_6890478-lq.mp3")
+// prompt that selectsLanguage
+// const selectLanguage = (e: React.ChangeEvent<HTMLSelectElement>) => {
+//   setLanguage(e.target.value)
+// }
 
-  // play winnerNoise when isWinner displays
-  // isWinner && winnerNoise.play()
+// reset noise
+// const resetNoise = new Audio("https://freesound.org/data/previews/269/269026_5094889-lq.mp3")
 
-  // loser noise
-  const loserNoise = new Audio("https://freesound.org/s/400581/")
+// winner noise
+// const winnerNoise = new Audio("https://freesound.org/data/previews/511/511484_6890478-lq.mp3")
 
-  // play loserNoise when isLoser displays
-  isLoser && loserNoise.play()
+// play winnerNoise when isWinner displays
+// isWinner && winnerNoise.play()
 
-  return (
-    <div style={mainDiv}>
-      {/* h1 only visible when game hasn't started */}
-      {guessedLetters.length !== 0 ? null : <h1 style={titleDiv}>Hang...That...MAN!</h1> }
+// loser noise
+const loserNoise = new Audio("https://freesound.org/s/400581/")
 
-      {/* Finale Text */}
-      <div style={finaleDiv}>
-        {
-          isWinner && 
-          <div>
-              <div style={{ marginBottom: "10px" }}>Winner winner gets the dinner!</div>
-              <div style={{ fontSize: "15px" }}>🐓🍽🐔 - Reset to play again</div>
-            </div>
-        }
-        {
-          isLoser && 
-            <div>
-              <div style={{ marginBottom: "10px" }}>Mamaaa! I just killed a man</div>
-              <div style={{ fontSize: "15px" }}>LOL 🤦🏻‍♂️ u suck - Reset to try again
-              </div>
-            </div>
-        }
-      </div>
-    
-    {/* add ticking audio whenever keyboard is pressed */}
-    {/* const ticking = "https://www.soundjay.com/button/sounds/button-3.mp3" 
-    <audio src={ticking} autoPlay></audio> */}
-    
-      {/* selectLanguage Button */}
-      {/* <div>
-        <select value={language} onChange={selectLanguage}>
-          <option value="en">English</option>
-          <option value="de">Deutsch</option>
-          <option value="es">Español</option>
-          <option value="fr">Français</option>
-          <option value="it">Italiano</option>
-          <option value="pt">Português</option>
-          <option value="nl">Nederlands</option>
-        </select>
-      </div> */}
+// play loserNoise when isLoser displays
+isLoser && loserNoise.play()
 
-      {/* Word Randomizer Button */}
-      <div className="button__class" style={randomizerBtn} onClick={() => setWordToGuess(wordRandomizer)}>
-        Random Word
-      </div>
-      <HangmanDrawing numberOfGuesses={incorrectLetters.length} />
+return (
+  <div style={mainDiv}>
+    {/* h1 only visible when game hasn't started */}
+    {guessedLetters.length !== 0 ? null : <h1 id="title__div">Hang...That...MAN!</h1> }
 
-      {/* Reset Button after game */}
+    {/* Finale Text */}
+    <div id="finale__div">
       {
-        isWinner || isLoser ? (
-          <div className="button__class" style={resetBtn} onClick={() => {
-              reset()
-              // resetNoise.play()
-              }
-            }
-          >
-            Reset
+        isWinner && 
+        <div>
+            <div style={{ marginBottom: "10px" }}>Winner winner gets the dinner!</div>
+            <div id="finale__message">🐓🍽🐔 - Reset to play again</div>
           </div>
-        ) : null
+      }
+      {
+        isLoser && 
+          <div>
+            <div style={{ marginBottom: "10px" }}>Mamaaa! I just killed a man</div>
+            <div id="finale__message">LOL 🤦🏻‍♂️ u suck - Reset to try again
+            </div>
+          </div>
+      }
+    </div>
+  
+  {/* add ticking audio whenever keyboard is pressed */}
+  {/* const ticking = "https://www.soundjay.com/button/sounds/button-3.mp3" 
+  <audio src={ticking} autoPlay></audio> */}
+  
+    {/* selectLanguage Button */}
+    {/* <div> */}
+      {/* <select value={language} onChange={selectLanguage}> */}
+        {/* <option value="en">English</option> */}
+        {/* <option value="de">Deutsch</option> */}
+        {/* <option value="es">Español</option> */}
+        {/* <option value="fr">Français</option>
+        <option value="it">Italiano</option>
+        <option value="pt">Português</option>
+        <option value="nl">Nederlands</option> */}
+      {/* </select> */}
+    {/* </div> */}
+
+    {/* Word Randomizer Button */}
+    <div className="button__class" style={randomizerBtn} onClick={() => setWordToGuess(wordRandomizer)}>
+      Random Word
+    </div>
+    <HangmanDrawing numberOfGuesses={incorrectLetters.length} />
+
+    {/* Reset Button after game */}
+    {
+      isWinner || isLoser ? (
+        <div className="button__class" style={resetBtn} onClick={() => {
+            reset()
+            // resetNoise.play()
+            }
+          }
+        >
+          Reset
+        </div>
+      ) : null
+    }
+
+    {/* Reveal Word Button */}
+        <div className="button__class" style={resetBtn} onClick={showHiddenWord}>
+          Show Hidden Word
+        </div>
+      {
+        reveal && (
+          <div style={revealDiv}>
+            {wordToGuess}
+          </div>
+        )
       }
 
-      {/* Reveal Word Button */}
-          <div className="button__class" style={resetBtn} onClick={showHiddenWord}>
-            Show Hidden Word
-          </div>
-        {
-          reveal && (
-            <div style={revealDiv}>
-              {wordToGuess}
-            </div>
-          )
-        }
-
-      <HangmanWord
-        reveal={isLoser}
-        guessedLetters={guessedLetters}
-        wordToGuess={wordToGuess}
+    <HangmanWord
+      reveal={isLoser}
+      guessedLetters={guessedLetters}
+      wordToGuess={wordToGuess}
+    />
+    
+    <div style={keyboardDiv}>
+      <Keyboard
+        disabled={isWinner || isLoser} 
+        activeLetters={guessedLetters.filter(letter =>
+          wordToGuess.includes(letter)
+        )}
+        inactiveLetters={incorrectLetters}
+        addGuessedLetter={addGuessedLetter}
       />
-      
-      <div style={keyboardDiv}>
-        <Keyboard
-          disabled={isWinner || isLoser} 
-          activeLetters={guessedLetters.filter(letter =>
-            wordToGuess.includes(letter)
-          )}
-          inactiveLetters={incorrectLetters}
-          addGuessedLetter={addGuessedLetter}
-        />
-      </div>
-      
     </div>
+    
+  </div>
   )
 }
 

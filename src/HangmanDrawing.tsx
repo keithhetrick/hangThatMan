@@ -251,18 +251,14 @@ const bottomHorizontal = {
 
 const BODY_PARTS = [HEAD, BODY, RIGHT_ARM, LEFT_ARM, RIGHT_LEG, LEFT_LEG, HAT]
 
-const positioning = { 
-  position: "relative",
-} as React.CSSProperties
-
 type HangmanDrawingProps = {
   numberOfGuesses: number
 }
 
 export function HangmanDrawing({ numberOfGuesses }: HangmanDrawingProps) {
   return (
-    <div style={positioning}>
-      <div id="hangman__container" style={positioning}>
+    <div id="outer__hangman__div">
+      <div id="hangman__container">
         {/* show HAT only when all body parts are visible */}
         {numberOfGuesses === 6 && HAT}
         {numberOfGuesses === 6 && FACIAL_EXPRESSION}
