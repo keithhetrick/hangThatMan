@@ -1,12 +1,12 @@
 @import url(https://fonts.googleapis.com/css?family=Press+Start+2P);
 
-/* change text to 8-bit */
+/* DESKTOP VIEW */
 * {
   font-family: "Press Start 2P", cursive;
   font-size: 80%;
 }
 
-/* morphing background colors */
+/* background colors */
 body {
   background: linear-gradient(
     -45deg,
@@ -46,7 +46,7 @@ body {
   background-color: #efefef;
 }
 
-/* change div button style on hover */
+/* div-button style on hover */
 .button__class:hover {
   background-color: #e0e0e0;
   transform: translateY(-0.1em);
@@ -58,7 +58,7 @@ body {
   transition: 0.2s;
 }
 
-/* wiggle button on release */
+/* div-button wiggle */
 .button__class:active {
   animation: wiggle 0.2s;
 }
@@ -82,7 +82,11 @@ body {
   text-align: center;
 }
 
-#finale__message {
+#finale__message__top {
+  margin-bottom: 10px;
+}
+
+#finale__message__bottom {
   font-size: 15px;
 }
 
@@ -96,7 +100,7 @@ body {
   align-items: center;
 }
 
-#outer__hangman__div,
+#hangman__display,
 #hangman__container {
   position: relative;
 }
@@ -105,107 +109,83 @@ body {
   position: absolute;
   padding: 0.5rem;
   padding-bottom: 0.5rem;
-  /* margin-bottom: 5rem; */
   top: 0;
   right: 0;
   font-size: 1.2rem;
 }
 
-/* font on mobile */
+/* MOBILE VIEW */
 @media (max-width: 600px) {
+  /* font on mobile */
   * {
     font-size: 50%;
   }
-}
 
-/* moving background on mobile */
-@media (max-width: 600px) {
+  /* moving background on mobile */
   body {
     background-size: 100% 100%;
   }
-}
 
-/* remaining__guesses on mobile */
-@media (max-width: 600px) {
+  .sticky__top {
+    position: sticky;
+    z-index: 1;
+  }
+
+  /* remaining__guesses on mobile */
   #remaining__guesses {
     font-size: 1.8rem;
     top: 0;
     right: 0;
     position: absolute;
-    /* position: sticky; */
   }
-}
 
-/* guessed__letter on mobile */
-@media (max-width: 600px) {
+  /* guessed__letter on mobile */
   #guessed__letter {
     font-size: 1.2rem;
   }
-}
 
-/* title__div on mobile */
-@media (max-width: 600px) {
+  /* title__div on mobile */
   #title__div {
     margin-top: 2rem;
   }
-}
 
-/* finale__div on mobile */
-@media (max-width: 600px) {
+  /* finale__div on mobile */
   #finale__div {
     margin-top: 2rem;
     margin-bottom: -2rem;
     font-size: 6rem;
   }
-}
 
-/* finale__message on mobile */
-@media (max-width: 600px) {
-  #finale__message {
+  /* finale__message__bottom on mobile */
+  #finale__message__bottom {
     font-size: 1.2rem;
   }
-}
 
-/* hangmanDrawing on mobile */
-@media (max-width: 600px) {
+  /* hangmanDrawing on mobile */
   #hangman__container {
     overflow-y: scroll;
     overflow-x: scroll;
-    /* margin-left: -50px; */
-    /* margin-right: 50px; */
-    width: 100%;
-    height: 100%;
   }
-}
 
-/* #outer__hangman__div on mobile */
-@media (max-width: 600px) {
-  #outer__hangman__div {
-    /* margin-right: 50px; */
+  /* #hangman__display on mobile */
+  #hangman__display {
     overflow-y: scroll;
     overflow-x: scroll;
-    /* margin-left: -100px; */
-    /* padding-right: 100px; */
+    width: 80%;
   }
-}
 
-/* letter__div on mobile */
-@media (max-width: 600px) {
+  /* letter__div on mobile */
   #letter__div {
-    /* width: 100%; */
     text-align: center;
     overflow-y: scroll;
     overflow-x: scroll;
   }
-}
 
-/* letter__div on mobile */
-@media (max-width: 600px) {
+  /* letter__div on mobile */
   .button__class {
     cursor: pointer;
     margin: 0em;
     font-size: 1rem;
-    /* padding: 1px 6px; */
     border-width: 2px;
   }
 }

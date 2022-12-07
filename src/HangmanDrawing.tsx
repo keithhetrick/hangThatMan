@@ -3,25 +3,8 @@ import styles from "./HangmanDrawing.module.css"
 // ======================
 // Styling for Hangman drawing
 // ======================
-const HEAD = (
-  <div 
-    id="head"
-    style={{
-      width: "50px",
-      height: "50px",
-      borderRadius: "100%",
-      border: "10px solid black",
-      position: "absolute",
-      top: "50px",
-      right: "-30px",
-      // rotate: "45deg",
-    }}
-  >
-    {/* ====================== */}
-    {/* Facial Expressions */}
-    {/* ====================== */}
-  </div>
-)
+const HEAD = <div id={styles.character__head} />
+
 const FACIAL_EXPRESSION = (
   <div 
     style={{
@@ -105,54 +88,11 @@ const FACIAL_EXPRESSION = (
   </div>
 )
 
-const BODY = (
-  <div 
-    id="body"
-    style={{
-      width: "10px",
-      height: "100px",
-      background: "black",
-      position: "absolute",
-      top: "120px",
-      right: 0,
-    }}
-  />
-)
-
-const RIGHT_ARM = (
-  <div 
-    id="body"
-    style={{
-      width: "100px",
-      height: "10px",
-      background: "black",
-      position: "absolute",
-      top: "150px",
-      right: "-100px",
-      rotate: "-30deg",
-      transformOrigin: "left bottom",
-    }}
-  />
-)
-
-const LEFT_ARM = (
-  <div 
-    id="body"
-    style={{
-      width: "100px",
-      height: "10px",
-      background: "black",
-      position: "absolute",
-      top: "150px",
-      right: "10px",
-      rotate: "30deg",
-      transformOrigin: "right bottom",
-    }}
-  />
-)
-
-const RIGHT_LEG = <div id={styles.right__leg} />
-const LEFT_LEG = <div id={styles.left__leg} />
+const BODY = <div id={styles.character__body} />
+const RIGHT_ARM = <div id={styles.character__right__arm} />
+const LEFT_ARM = <div id={styles.character__left__arm} />
+const RIGHT_LEG = <div id={styles.character__right__leg} />
+const LEFT_LEG = <div id={styles.character__left__leg} />
 
 
 // ======================
@@ -183,7 +123,6 @@ const HAT = (
           top: "-8px", 
           borderRadius: "100%", 
           background: "lightGreen",
-          // zIndex: 1,
           }} 
         />
     </div>
@@ -197,17 +136,20 @@ type HangmanDrawingProps = {
 
 export function HangmanDrawing({ numberOfGuesses }: HangmanDrawingProps) {
   return (
-    <div id="outer__hangman__div">
+    <div id="hangman__display">
       <div id="hangman__container">
-        {/* show HAT only when all body parts are visible */}
-        {numberOfGuesses === 6 && HAT}
-        {numberOfGuesses === 6 && FACIAL_EXPRESSION}
-        {/* {HAT} */}
+
+        {/* Character */}
+        {/* {numberOfGuesses === 6 && HAT} */}
+        {/* {numberOfGuesses === 6 && FACIAL_EXPRESSION} */}
         {BODY_PARTS.slice(0, numberOfGuesses)}
-          <div id={styles.small__vertical} />
-          <div id={styles.top__horizontal} />
-          <div id={styles.middle__vertical} />
-          <div id={styles.bottom__horizontal} />
+
+        {/* Gallows */}
+        <div id={styles.gallows__small__vertical} />
+        <div id={styles.gallows__top__horizontal} />
+        <div id={styles.gallows__middle__vertical} />
+        <div id={styles.gallows__bottom__horizontal} />
+
       </div>
     </div>
   )

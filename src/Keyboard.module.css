@@ -71,7 +71,7 @@
     grid-template-columns: repeat(6, 1fr);
     overflow-x: scroll;
     overflow-y: scroll;
-    /* height: 250px; */
+    height: 250px;
   }
 }
 
@@ -82,6 +82,6 @@
     grid-template-columns: repeat(6, 1fr);
     overflow-x: scroll;
     overflow-y: scroll;
-    /* height: 350px; */
+    height: 350px;
   }
 }

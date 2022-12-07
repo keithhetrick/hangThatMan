@@ -172,24 +172,24 @@ isLoser && loserNoise.play()
 
 return (
   <div style={mainDiv}>
-    {/* h1 only visible when game hasn't started */}
-    {guessedLetters.length !== 0 ? null : <h1 id="title__div">Hang...That...MAN!</h1> }
 
+    {/* Welcome Message */}
+    {guessedLetters.length !== 0 ? null : <h1 id="title__div">Hang...That...MAN!</h1> }
 
     {/* Finale Text */}
     <div id="finale__div">
       {
         isWinner && 
-        <div>
-            <div style={{ marginBottom: "10px" }}>Winner winner gets the dinner!</div>
-            <div id="finale__message">🐓🍽🐔 - Reset to play again</div>
-          </div>
+        <div id="winner__message">
+          <div id="finale__message__top">Winner winner gets the dinner!</div>
+          <div id="finale__message__bottom">🐓🍽🐔 - Reset to play again</div>
+        </div>
       }
       {
         isLoser && 
-          <div>
-            <div style={{ marginBottom: "10px" }}>Mamaaa! I just killed a man</div>
-            <div id="finale__message">LOL 🤦🏻‍♂️ u suck - Reset to try again
+          <div id="loser__message">
+            <div id="finale__message__top">Mamaaa! I just killed a man</div>
+            <div id="finale__message__bottom">LOL 🤦🏻‍♂️ u suck - Reset to try again
             </div>
           </div>
       }
@@ -215,23 +215,21 @@ return (
     {/* add setRemainingGuesses in DOM */}
 
     {/* setRemainingGuesses only hidden when game has ended */}
-    {/* {guessedLetters.length !== 0 ? null :  */}
-          <div id="remaining__guesses">
-            <div>Remaing guesses: {remainingGuesses}</div>
-          </div>
-            {/* } */}
-      
+    <div id="remaining__guesses" className="sticky__top">
+      <div>Remaing guesses: {remainingGuesses}</div>
+    </div>
 
     {/* Word Randomizer Button */}
-    <div className="button__class" style={randomizerBtn} onClick={() => setWordToGuess(wordRandomizer)}>
+    <div id="randomizer__button" className="button__class" style={randomizerBtn} onClick={() => setWordToGuess(wordRandomizer)}>
       Random Word
     </div>
+
     <HangmanDrawing numberOfGuesses={incorrectLetters.length} />
 
     {/* Reset Button after game */}
     {
       isWinner || isLoser ? (
-        <div className="button__class" style={resetBtn} onClick={() => {
+        <div id="reset__button" className="button__class" style={resetBtn} onClick={() => {
             reset()
             // resetNoise.play()
             }
@@ -248,16 +246,16 @@ return (
     </div>
 
     {/* Reveal Word Button */}
-        <div className="button__class" style={resetBtn} onClick={showHiddenWord}>
-          Show Hidden Word
+    <div id="reveal__button" className="button__class" style={resetBtn} onClick={showHiddenWord}>
+      Show Hidden Word
+    </div>
+    {
+      reveal && (
+        <div style={revealDiv}>
+          {wordToGuess}
         </div>
-      {
-        reveal && (
-          <div style={revealDiv}>
-            {wordToGuess}
-          </div>
-        )
-      }
+      )
+    }
 
     <HangmanWord
       reveal={isLoser}
@@ -265,7 +263,7 @@ return (
       wordToGuess={wordToGuess}
     />
     
-    <div style={keyboardDiv}>
+    <div id="keyboard__display" style={keyboardDiv}>
       <Keyboard
         disabled={isWinner || isLoser} 
         activeLetters={guessedLetters.filter(letter =>

@@ -1,7 +1,7 @@
 /* ================== */
 /* Styling for Gallows */
 /* ================== */
-#small__vertical {
+#gallows__small__vertical {
   height: 50px;
   width: 10px;
   background: black;
@@ -10,63 +10,116 @@
   right: 0;
 }
 
-#top__horizontal {
+#gallows__top__horizontal {
   height: 10px;
   width: 200px;
   background: black;
   margin-left: 120px;
 }
 
-#middle__vertical {
+#gallows__middle__vertical {
   height: 400px;
   width: 10px;
   background: black;
   margin-left: 120px;
 }
 
-#bottom__horizontal {
+#gallows__bottom__horizontal {
   height: 10px;
   width: 250px;
   background: black;
 }
 
-/* gallowins on mobile */
+/* gallows on mobile */
 @media screen and (max-width: 600px) {
-  #small__vertical {
+  #gallows__small__vertical {
     height: 50px;
     width: 10px;
     background: black;
     position: absolute;
     top: 0;
     right: 0;
+    margin-right: 110px;
   }
 
-  #top__horizontal {
+  #gallows__top__horizontal {
     height: 10px;
-    width: 200px;
+    width: 110px;
     background: black;
-    margin-left: 120px;
+    margin-left: 0;
+    margin-left: 70px;
   }
 
-  #middle__vertical {
+  #gallows__middle__vertical {
     height: 300px;
     width: 10px;
     background: black;
-    margin-left: 120px;
+    margin-left: 0;
+    margin: 0px 0px 0px 70px;
   }
 
-  #bottom__horizontal {
+  #gallows__bottom__horizontal {
     height: 10px;
-    width: 250px;
+    width: 110px;
+    margin-left: 20px;
     background: black;
   }
 }
 
 /* ================== */
-/* Styling for body */
+/* Styling for Character */
 /* ================== */
+#character__head,
+#character__body,
+#character__left__arm,
+#character__right__arm,
+#character__left__leg,
+#character__right__leg {
+  margin-right: 110px;
+}
 
-#left__leg {
+#character__head {
+  width: 50px;
+  height: 50px;
+  border-radius: 100%;
+  border: 10px solid black;
+  position: absolute;
+  top: 50px;
+  right: -30px;
+}
+
+#character__body {
+  width: 10px;
+  height: 100px;
+  background: black;
+  position: absolute;
+  top: 120px;
+  right: 0px;
+}
+
+#character__left__arm {
+  width: 100px;
+  height: 10px;
+  background: black;
+  position: absolute;
+  top: 150px;
+  right: 10px;
+  rotate: 30deg;
+  transform-origin: right bottom;
+}
+
+#character__right__arm {
+  width: 100px;
+  height: 10px;
+  background: black;
+  position: absolute;
+  top: 150px;
+  right: -100px;
+  rotate: -30deg;
+  transform-origin: left bottom;
+}
+
+#character__left__leg {
   width: 100px;
   height: 10px;
   background: black;
@@ -77,7 +130,7 @@
   transform-origin: right bottom;
 }
 
-#right__leg {
+#character__right__leg {
   width: 100px;
   height: 10px;
   background: black;
@@ -90,23 +143,64 @@
 
 /* body on mobile */
 @media screen and (max-width: 600px) {
-  #left__leg {
-    width: 90px;
+  #character__head {
+    width: 40px;
+    height: 40px;
+    border-radius: 100%;
+    border: 10px solid black;
+    position: absolute;
+    top: 50px;
+    right: -25px;
+  }
+
+  #character__body {
+    width: 10px;
+    height: 75px;
+    background: black;
+    position: absolute;
+    top: 110px;
+    right: 0px;
+  }
+
+  #character__left__arm {
+    width: 60px;
     height: 10px;
     background: black;
     position: absolute;
-    top: 210px;
+    top: 140px;
+    right: 5px;
+    rotate: 30deg;
+    transform-origin: right bottom;
+  }
+
+  #character__right__arm {
+    width: 60px;
+    height: 10px;
+    background: black;
+    position: absolute;
+    top: 140px;
+    right: -55px;
+    rotate: -30deg;
+    transform-origin: left bottom;
+  }
+
+  #character__left__leg {
+    width: 75px;
+    height: 10px;
+    background: black;
+    position: absolute;
+    top: 175px;
     right: 0;
     rotate: -60deg;
     transform-origin: right bottom;
   }
-  #right__leg {
-    width: 90px;
+  #character__right__leg {
+    width: 75px;
     height: 10px;
     background: black;
     position: absolute;
-    top: 210px;
-    right: -80px;
+    top: 175px;
+    right: -65px;
     rotate: 60deg;
     transform-origin: left bottom;
   }
