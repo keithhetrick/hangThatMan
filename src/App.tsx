@@ -104,8 +104,8 @@ useEffect(() => {
   return () => {
     document.removeEventListener("keypress", handler)
   }
-  // eslint-disable-next-line
-}, [guessedLetters])
+
+}, [guessedLetters, isWinner, isLoser, addGuessedLetter])
 
 useEffect(() => {
   const handler = (e: KeyboardEvent) => {
@@ -225,6 +225,15 @@ return (
     </div>
 
     <HangmanDrawing numberOfGuesses={incorrectLetters.length} />
+
+    {/* Reveals Word when isLoser is showing */}
+    {
+      isLoser ? (
+        <div id="game__over__word__reveal" style={revealDiv}>
+          Word was: {wordToGuess}
+        </div>
+      ) : null
+    }
 
     {/* Reset Button after game */}
     {
