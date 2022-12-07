@@ -60,6 +60,7 @@ function App() {
   const [wordToGuess, setWordToGuess] = useState(getWord)
   const [guessedLetters, setGuessedLetters] = useState<string[]>([])
   const [reveal, setReveal] = useState(false)
+  const [remainingGuesses, setRemainingGuesses] = useState(6)
   // const [language, setLanguage] = useState("en")
 
   // word randomizer button using getWord() function and resets game
@@ -135,6 +136,20 @@ const showHiddenWord = () => {
   setReveal(currentReveal => !currentReveal)
 }
 
+// prompt that shows remaining guesses
+useEffect(() => {
+  setRemainingGuesses(6 - incorrectLetters.length)
+  if(remainingGuesses === 0) <div>🤷</div>
+  
+}, [incorrectLetters, isLoser, isWinner, remainingGuesses])
+
+// prompt that displays guessed letters
+const guessedLettersDisplay = () => {
+  if (guessedLetters.length === 0) return
+
+  return <div>Guessed Letters: {guessedLetters.join(", ")}</div>
+}
+
 // prompt that selectsLanguage
 // const selectLanguage = (e: React.ChangeEvent<HTMLSelectElement>) => {
 //   setLanguage(e.target.value)
@@ -159,6 +174,7 @@ return (
   <div style={mainDiv}>
     {/* h1 only visible when game hasn't started */}
     {guessedLetters.length !== 0 ? null : <h1 id="title__div">Hang...That...MAN!</h1> }
+
 
     {/* Finale Text */}
     <div id="finale__div">
@@ -196,6 +212,16 @@ return (
       {/* </select> */}
     {/* </div> */}
 
+    {/* add setRemainingGuesses in DOM */}
+
+    {/* setRemainingGuesses only hidden when game has ended */}
+    {/* {guessedLetters.length !== 0 ? null :  */}
+          <div id="remaining__guesses">
+            <div>Remaing guesses: {remainingGuesses}</div>
+          </div>
+            {/* } */}
+      
+
     {/* Word Randomizer Button */}
     <div className="button__class" style={randomizerBtn} onClick={() => setWordToGuess(wordRandomizer)}>
       Random Word
@@ -215,6 +241,11 @@ return (
         </div>
       ) : null
     }
+
+    {/* Guessed Letters */}
+    <div id="guessed__letters">
+      <div>{guessedLettersDisplay()}</div>
+    </div>
 
     {/* Reveal Word Button */}
         <div className="button__class" style={resetBtn} onClick={showHiddenWord}>
