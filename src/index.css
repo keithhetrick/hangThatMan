@@ -126,17 +126,22 @@ body {
     background-size: 100% 100%;
   }
 
-  .sticky__top {
+  /* #sticky__top {
     position: sticky;
+    top: 0;
     z-index: 1;
-  }
+    margin-top: 1.2rem;
+    margin-left: 34vw;
+  } */
 
   /* remaining__guesses on mobile */
   #remaining__guesses {
     font-size: 1.8rem;
+    position: sticky;
     top: 0;
-    right: 0;
-    position: absolute;
+    z-index: 1;
+    margin-top: 1.2rem;
+    margin-left: 74vw;
   }
 
   /* guessed__letter on mobile */

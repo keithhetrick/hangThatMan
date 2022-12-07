@@ -215,7 +215,7 @@ return (
     {/* add setRemainingGuesses in DOM */}
 
     {/* setRemainingGuesses only hidden when game has ended */}
-    <div id="remaining__guesses" className="sticky__top">
+    <div id="remaining__guesses">
       <div>Remaing guesses: {remainingGuesses}</div>
     </div>
 

@@ -30,8 +30,44 @@
   background: black;
 }
 
-/* gallows on mobile */
+/* gallows on 600px mobile */
 @media screen and (max-width: 600px) {
+  #gallows__small__vertical {
+    height: 50px;
+    width: 10px;
+    background: black;
+    position: absolute;
+    top: 0;
+    right: 0;
+    margin-right: 180px;
+  }
+
+  #gallows__top__horizontal {
+    height: 10px;
+    width: 110px;
+    background: black;
+    margin-left: 0;
+    margin-left: 170px;
+  }
+
+  #gallows__middle__vertical {
+    height: 300px;
+    width: 10px;
+    background: black;
+    margin-left: 0;
+    margin: 0px 0px 0px 170px;
+  }
+
+  #gallows__bottom__horizontal {
+    height: 10px;
+    width: 110px;
+    margin-left: 120px;
+    background: black;
+  }
+}
+
+/* gallows on 400px mobile */
+@media screen and (max-width: 400px) {
   #gallows__small__vertical {
     height: 50px;
     width: 10px;
@@ -44,7 +80,7 @@
 
   #gallows__top__horizontal {
     height: 10px;
-    width: 110px;
+    width: 120px;
     background: black;
     margin-left: 0;
     margin-left: 70px;
@@ -60,8 +96,8 @@
 
   #gallows__bottom__horizontal {
     height: 10px;
-    width: 110px;
-    margin-left: 20px;
+    width: 120px;
+    margin-left: 15px;
     background: black;
   }
 }
@@ -69,15 +105,6 @@
 /* ================== */
 /* Styling for Character */
 /* ================== */
-#character__head,
-#character__body,
-#character__left__arm,
-#character__right__arm,
-#character__left__leg,
-#character__right__leg {
-  margin-right: 110px;
-}
-
 #character__head {
   width: 50px;
   height: 50px;
@@ -141,8 +168,82 @@
   transform-origin: left bottom;
 }
 
-/* body on mobile */
+/* character on 600px mobile */
 @media screen and (max-width: 600px) {
+  #character__head {
+    width: 40px;
+    height: 40px;
+    border-radius: 100%;
+    border: 10px solid black;
+    position: absolute;
+    top: 50px;
+    right: 155px;
+  }
+
+  #character__body {
+    width: 10px;
+    height: 75px;
+    background: black;
+    position: absolute;
+    top: 110px;
+    right: 180px;
+  }
+
+  #character__left__arm {
+    width: 60px;
+    height: 10px;
+    background: black;
+    position: absolute;
+    top: 140px;
+    right: 185px;
+    rotate: 30deg;
+    transform-origin: right bottom;
+  }
+
+  #character__right__arm {
+    width: 60px;
+    height: 10px;
+    background: black;
+    position: absolute;
+    top: 140px;
+    right: 125px;
+    rotate: -30deg;
+    transform-origin: left bottom;
+  }
+
+  #character__left__leg {
+    width: 75px;
+    height: 10px;
+    background: black;
+    position: absolute;
+    top: 175px;
+    right: 180px;
+    rotate: -60deg;
+    transform-origin: right bottom;
+  }
+  #character__right__leg {
+    width: 75px;
+    height: 10px;
+    background: black;
+    position: absolute;
+    top: 175px;
+    right: 115px;
+    rotate: 60deg;
+    transform-origin: left bottom;
+  }
+}
+
+/* character on 400px mobile */
+@media screen and (max-width: 400px) {
+  #character__head,
+  #character__body,
+  #character__left__arm,
+  #character__right__arm,
+  #character__left__leg,
+  #character__right__leg {
+    margin-right: 110px;
+  }
+
   #character__head {
     width: 40px;
     height: 40px;
