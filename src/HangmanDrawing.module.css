@@ -1,0 +1,113 @@
+/* ================== */
+/* Styling for Gallows */
+/* ================== */
+#small__vertical {
+  height: 50px;
+  width: 10px;
+  background: black;
+  position: absolute;
+  top: 0;
+  right: 0;
+}
+
+#top__horizontal {
+  height: 10px;
+  width: 200px;
+  background: black;
+  margin-left: 120px;
+}
+
+#middle__vertical {
+  height: 400px;
+  width: 10px;
+  background: black;
+  margin-left: 120px;
+}
+
+#bottom__horizontal {
+  height: 10px;
+  width: 250px;
+  background: black;
+}
+
+/* gallowins on mobile */
+@media screen and (max-width: 600px) {
+  #small__vertical {
+    height: 50px;
+    width: 10px;
+    background: black;
+    position: absolute;
+    top: 0;
+    right: 0;
+  }
+
+  #top__horizontal {
+    height: 10px;
+    width: 200px;
+    background: black;
+    margin-left: 120px;
+  }
+
+  #middle__vertical {
+    height: 300px;
+    width: 10px;
+    background: black;
+    margin-left: 120px;
+  }
+
+  #bottom__horizontal {
+    height: 10px;
+    width: 250px;
+    background: black;
+  }
+}
+
+/* ================== */
+/* Styling for body */
+/* ================== */
+
+#left__leg {
+  width: 100px;
+  height: 10px;
+  background: black;
+  position: absolute;
+  top: 210px;
+  right: 0;
+  rotate: -60deg;
+  transform-origin: right bottom;
+}
+
+#right__leg {
+  width: 100px;
+  height: 10px;
+  background: black;
+  position: absolute;
+  top: 210px;
+  right: -90px;
+  rotate: 60deg;
+  transform-origin: left bottom;
+}
+
+/* body on mobile */
+@media screen and (max-width: 600px) {
+  #left__leg {
+    width: 90px;
+    height: 10px;
+    background: black;
+    position: absolute;
+    top: 210px;
+    right: 0;
+    rotate: -60deg;
+    transform-origin: right bottom;
+  }
+  #right__leg {
+    width: 90px;
+    height: 10px;
+    background: black;
+    position: absolute;
+    top: 210px;
+    right: -80px;
+    rotate: 60deg;
+    transform-origin: left bottom;
+  }
+}

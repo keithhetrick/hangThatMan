@@ -57,11 +57,11 @@ const revealDiv = {
 // ======================
 
 function App() {
-  const [wordToGuess, setWordToGuess] = useState(getWord)
+  const [wordToGuess, setWordToGuess] = useState<string | "">(getWord())
   const [guessedLetters, setGuessedLetters] = useState<string[]>([])
-  const [reveal, setReveal] = useState(false)
-  const [remainingGuesses, setRemainingGuesses] = useState(6)
-  // const [language, setLanguage] = useState("en")
+  const [reveal, setReveal] = useState<Boolean>(false)
+  const [remainingGuesses, setRemainingGuesses] = useState<number>(6)
+  // const [language, setLanguage] = useState<string>("en")
 
   // word randomizer button using getWord() function and resets game
 const wordRandomizer = () => {
