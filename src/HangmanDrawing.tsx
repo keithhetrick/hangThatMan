@@ -1,7 +1,7 @@
 import styles from "./HangmanDrawing.module.css"
 
 // ======================
-// Styling for Hangman drawing
+// Styling for Hangman drawing - NOT BEING USED
 // ======================
 const FACIAL_EXPRESSION = (
   <div 
@@ -94,40 +94,7 @@ const RIGHT_LEG = <div id={styles.character__right__leg} />
 const LEFT_LEG = <div id={styles.character__left__leg} />
 
 
-// ======================
-// Styling for Hat
-// ======================
-const HAT = (
-    <div
-      id="hat"
-      style={{
-        width: "0",
-        height: "0",
-        borderLeft: "25px solid transparent",
-        borderRight: "25px solid transparent",
-        borderTop: "50px solid red",
-        position: "absolute",
-        top: "7px",
-        right: "-20px",
-        rotate: "180deg",
-        zIndex: 1,
-      }}
-      >
-      <div 
-        style={{ 
-          height: "25px", 
-          width: "25px", 
-          position: "absolute", 
-          right: "-13px", 
-          top: "-8px", 
-          borderRadius: "100%", 
-          background: "lightGreen",
-          }} 
-        />
-    </div>
-  )
-
-const BODY_PARTS = [HEAD, BODY, RIGHT_ARM, LEFT_ARM, RIGHT_LEG, LEFT_LEG, HAT]
+const BODY_PARTS = [HEAD, BODY, RIGHT_ARM, LEFT_ARM, RIGHT_LEG, LEFT_LEG]
 
 type HangmanDrawingProps = {
   numberOfGuesses: number
@@ -136,16 +103,15 @@ type HangmanDrawingProps = {
 export function HangmanDrawing({ numberOfGuesses }: HangmanDrawingProps) {
   return (
     <div id="hangman__display">
+
+      {/* Character */}
       <div id="hangman__container">
-
-        {/* Character */}
-        {/* {numberOfGuesses === 6 && HAT} */}
-        {/* {numberOfGuesses === 6 && FACIAL_EXPRESSION} */}
         {BODY_PARTS.slice(0, numberOfGuesses)}
-
+        {/* {numberOfGuesses === 6 && FACIAL_EXPRESSION} */}
       </div>
+
+      {/* Gallows */}
       <div id="gallows__container"> 
-        {/* Gallows */}
         <div id={styles.gallows__top__horizontal} />
         <div id={styles.gallows__small__vertical} />
         <div id={styles.gallows__middle__vertical} />

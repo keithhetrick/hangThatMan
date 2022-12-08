@@ -75,6 +75,33 @@ body {
   }
 }
 
+#randomizer__button {
+  display: block;
+  margin: 0 auto;
+  margin-top: 2rem;
+  padding: 0.5rem;
+  font-size: 1.5rem;
+  cursor: "pointer";
+}
+
+#hidden__word__button {
+  display: block;
+  margin: 0 auto;
+  margin-top: 1rem;
+  padding: 0.5rem;
+  font-size: 1.5rem;
+  cursor: "pointer";
+}
+
+#reset__button {
+  display: block;
+  margin: 0 auto;
+  margin-top: 1rem;
+  padding: 0.5rem;
+  font-size: 1.5rem;
+  cursor: "pointer";
+}
+
 #finale__div {
   font-size: 3rem;
   margin-top: 2rem;
@@ -100,6 +127,15 @@ body {
   align-items: center;
 }
 
+#letter__div {
+  display: flex;
+  gap: 0.25em;
+  font-size: 6rem;
+  font-weight: bold;
+  text-transform: uppercase;
+  font-family: monospace;
+}
+
 #hangman__display {
   position: relative;
 }
@@ -118,18 +154,43 @@ body {
 }
 
 /* MOBILE VIEW */
+@media (max-width: 768px) {
+  #randomizer__button {
+    margin: 0 auto;
+    margin-top: 1.2rem;
+  }
+}
+
 @media (max-width: 600px) {
-  /* font on mobile */
   * {
     font-size: 50%;
   }
 
-  /* moving background on mobile */
-  body {
-    background-size: 100% 100% 100% 100%;
+  #randomizer__button {
+    display: block;
+    margin: 0 auto;
+    margin-top: -1rem;
+    padding: 0.5rem;
+    font-size: 1rem;
   }
 
-  /* remaining__guesses on mobile */
+  #hidden__word__button {
+    display: block;
+    margin: 0 auto;
+    margin-top: -0.1rem;
+    padding: 0.5rem;
+    font-size: 1rem;
+  }
+
+  #reset__button {
+    display: block;
+    margin: 0 auto;
+    margin-top: 1rem;
+    margin-bottom: 0.2rem;
+    padding: 0.5rem;
+    font-size: 1rem;
+  }
+
   #remaining__guesses {
     font-size: 1.8rem;
     position: sticky;
@@ -140,36 +201,34 @@ body {
     margin-left: 62vw;
   }
 
-  /* guessed__letter on mobile */
   #guessed__letter {
     font-size: 1.2rem;
   }
 
-  /* title__div on mobile */
   #title__div {
     margin-top: 2rem;
   }
 
-  /* finale__div on mobile */
   #finale__div {
     margin-top: 2rem;
     margin-bottom: -2rem;
     font-size: 6rem;
   }
 
-  /* finale__message__bottom on mobile */
   #finale__message__bottom {
     font-size: 1.2rem;
   }
 
-  /* letter__div on mobile */
+  #finale__message__top {
+    margin-top: -1rem;
+  }
+
   #letter__div {
     text-align: center;
     overflow-y: scroll;
     overflow-x: scroll;
   }
 
-  /* letter__div on mobile */
   .button__class {
     cursor: pointer;
     margin: 0em;
@@ -180,16 +239,26 @@ body {
 
 /* mobile for 375px -- MY PHONE */
 @media (max-width: 375px) {
-  /* remaining__guesses on mobile */
+  #finale__message__bottom {
+    font-size: 8px;
+  }
+
   #remaining__guesses {
-    font-size: 1.8rem;
+    font-size: 1.3rem;
     position: sticky;
     margin-top: 1.2rem;
     direction: rtl;
-    margin-left: 62vw;
+    margin-left: 65vw;
   }
 
-  /* letter__div on mobile */
+  #guessed__letters {
+    font-size: 4rem;
+  }
+
+  #letter__div {
+    margin-top: -1.2rem;
+  }
+
   .button__class {
     cursor: pointer;
     margin: 0em;

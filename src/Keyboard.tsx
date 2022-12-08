@@ -36,16 +36,6 @@ type KeyboardProps = {
   addGuessedLetter: (letter: string) => void
 }
 
-// create a function that plays audio at every keyboard click
-// export const useAudio = (url: string) => {
-//   const [audio] = useState(new Audio(url))
-//   const play = () => {
-//     audio.play()
-//   }
-//   return play
-// }
-
-
 export function Keyboard({
   activeLetters,
   inactiveLetters,
