@@ -43,20 +43,15 @@
 /* } */
 
 /* keyboard on mobile - bp 1 */
-@media (max-width: 850px) {
+/* @media (max-width: 850px) {
   .keyboard__div {
-    /* grid-template-columns: repeat(auto-fill, minmax(45px, 1fr)); */
     grid-template-columns: repeat(9, 1fr);
-    overflow-x: scroll;
-    overflow-y: scroll;
-    height: 250px;
   }
-}
+} */
 
 /* keyboard on mobile - bp 2 */
 @media (max-width: 720px) {
   .keyboard__div {
-    /* grid-template-columns: repeat(auto-fill, minmax(45px, 1fr)); */
     grid-template-columns: repeat(6, 1fr);
     overflow-x: scroll;
     overflow-y: scroll;
@@ -67,7 +62,6 @@
 /* keyboard on mobile - bp 3 */
 @media (max-width: 600px) {
   .keyboard__div {
-    /* grid-template-columns: repeat(auto-fill, minmax(45px, 1fr)); */
     grid-template-columns: repeat(6, 1fr);
     overflow-x: scroll;
     overflow-y: scroll;
@@ -76,9 +70,18 @@
 }
 
 /* keyboard on mobile - bp 4 */
+@media (max-width: 412px) {
+  .keyboard__div {
+    grid-template-columns: repeat(6, 1fr);
+    overflow-x: scroll;
+    overflow-y: scroll;
+    /* height: 230px; */
+  }
+}
+
+/* keyboard on mobile - bp 4 */
 @media (max-width: 375px) {
   .keyboard__div {
-    /* grid-template-columns: repeat(auto-fill, minmax(45px, 1fr)); */
     grid-template-columns: repeat(6, 1fr);
     overflow-x: scroll;
     overflow-y: scroll;

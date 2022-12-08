@@ -1,37 +1,49 @@
 /* ================== */
 /* Styling for Gallows */
 /* ================== */
+
+/* add "bending" effect to gallows on hover */
+/* div[id*="gallows__"]:hover {
+  transform: skew(-5deg);
+  transition: all 0.5s ease;
+} */
+
 #gallows__small__vertical {
   height: 50px;
   width: 10px;
   background: black;
   position: absolute;
   top: 0;
+  /* right: 110px; */
   right: 0;
+  margin: auto;
 }
 
 #gallows__top__horizontal {
   height: 10px;
-  width: 200px;
+  width: 175px;
   background: black;
-  margin-left: 120px;
+  margin-left: 85px;
 }
 
 #gallows__middle__vertical {
   height: 400px;
   width: 10px;
   background: black;
-  margin-left: 120px;
+  /* margin-left: 120px; */
+  margin-right: 80px;
 }
 
 #gallows__bottom__horizontal {
   height: 10px;
-  width: 250px;
+  width: 200px;
   background: black;
+  /* margin-left: 50px; */
+  margin-right: 80px;
 }
 
-/* gallows on 600px mobile */
-@media screen and (max-width: 600px) {
+/* gallows on 425px mobile */
+/* @media screen and (max-width: 600px) {
   #gallows__small__vertical {
     height: 50px;
     width: 10px;
@@ -64,41 +76,81 @@
     margin-left: 120px;
     background: black;
   }
-}
+} */
 
-/* gallows on 375px mobile -- MY PHONE */
-@media screen and (max-width: 400px) {
+/* gallows on 425px mobile */
+@media screen and (max-width: 500px) {
   #gallows__small__vertical {
-    height: 50px;
+    height: 35px;
     width: 10px;
     background: black;
     position: absolute;
     top: 0;
+    /* right: 110px; */
     right: 0;
-    margin-right: 110px;
+    margin: auto;
+    margin-right: 45px;
   }
 
   #gallows__top__horizontal {
     height: 10px;
-    width: 105px;
+    width: 100px;
     background: black;
-    margin-left: 0;
-    margin-left: 70px;
+    margin-left: 10px;
   }
 
   #gallows__middle__vertical {
-    height: 300px;
+    height: 250px;
     width: 10px;
     background: black;
-    margin-left: 0;
-    margin: 0px 0px 0px 70px;
+    /* margin-left: 120px; */
+    margin-right: 80px;
   }
 
   #gallows__bottom__horizontal {
     height: 10px;
-    width: 120px;
-    margin-left: 15px;
+    width: 125px;
     background: black;
+    /* margin-left: 50px; */
+    margin-right: 80px;
+  }
+}
+
+/* gallows on 425px mobile */
+@media screen and (max-width: 425px) {
+  #gallows__small__vertical {
+    height: 35px;
+    width: 10px;
+    background: black;
+    position: absolute;
+    top: 0;
+    /* right: 110px; */
+    right: 0;
+    margin: auto;
+    margin-right: 45px;
+  }
+
+  #gallows__top__horizontal {
+    height: 10px;
+    width: 100px;
+    background: black;
+    margin-left: 10px;
+  }
+
+  #gallows__middle__vertical {
+    height: 250px;
+    width: 10px;
+    background: black;
+    /* margin-left: 120px; */
+    margin-right: 80px;
+  }
+
+  #gallows__bottom__horizontal {
+    height: 10px;
+    width: 125px;
+    background: black;
+    /* margin-left: 50px; */
+    margin-right: 80px;
   }
 }
 
@@ -168,90 +220,25 @@
   transform-origin: left bottom;
 }
 
-/* character on 600px mobile */
-@media screen and (max-width: 600px) {
-  #character__head {
-    width: 40px;
-    height: 40px;
-    border-radius: 100%;
-    border: 10px solid black;
-    position: absolute;
-    top: 50px;
-    right: 155px;
-  }
-
-  #character__body {
-    width: 10px;
-    height: 75px;
-    background: black;
-    position: absolute;
-    top: 110px;
-    right: 180px;
-  }
-
-  #character__left__arm {
-    width: 60px;
-    height: 10px;
-    background: black;
-    position: absolute;
-    top: 140px;
-    right: 185px;
-    rotate: 30deg;
-    transform-origin: right bottom;
-  }
-
-  #character__right__arm {
-    width: 60px;
-    height: 10px;
-    background: black;
-    position: absolute;
-    top: 140px;
-    right: 125px;
-    rotate: -30deg;
-    transform-origin: left bottom;
-  }
-
-  #character__left__leg {
-    width: 75px;
-    height: 10px;
-    background: black;
-    position: absolute;
-    top: 175px;
-    right: 180px;
-    rotate: -60deg;
-    transform-origin: right bottom;
-  }
-  #character__right__leg {
-    width: 75px;
-    height: 10px;
-    background: black;
-    position: absolute;
-    top: 175px;
-    right: 115px;
-    rotate: 60deg;
-    transform-origin: left bottom;
-  }
-}
-
-/* character on 400px mobile */
-@media screen and (max-width: 400px) {
+/* character on 500px mobile */
+@media screen and (max-width: 500px) {
   #character__head,
   #character__body,
   #character__left__arm,
   #character__right__arm,
   #character__left__leg,
   #character__right__leg {
-    margin-right: 110px;
+    margin-right: 25px;
   }
 
   #character__head {
-    width: 40px;
-    height: 40px;
+    width: 20px;
+    height: 20px;
     border-radius: 100%;
     border: 10px solid black;
     position: absolute;
-    top: 50px;
-    right: -25px;
+    top: 30px;
+    right: 5px;
   }
 
   #character__body {
@@ -259,49 +246,50 @@
     height: 75px;
     background: black;
     position: absolute;
-    top: 110px;
-    right: 0px;
+    top: 69px;
+    right: 20px;
   }
 
   #character__left__arm {
-    width: 60px;
+    width: 50px;
     height: 10px;
     background: black;
     position: absolute;
-    top: 140px;
-    right: 5px;
+    top: 100px;
+    right: 25px;
     rotate: 30deg;
     transform-origin: right bottom;
   }
 
   #character__right__arm {
-    width: 60px;
+    width: 50px;
     height: 10px;
     background: black;
     position: absolute;
-    top: 140px;
-    right: -55px;
+    top: 100px;
+    right: -25px;
     rotate: -30deg;
     transform-origin: left bottom;
   }
 
   #character__left__leg {
-    width: 75px;
+    width: 60px;
     height: 10px;
     background: black;
     position: absolute;
-    top: 175px;
+    top: 132px;
     right: 0;
+    margin-right: 45px;
     rotate: -60deg;
     transform-origin: right bottom;
   }
   #character__right__leg {
-    width: 75px;
+    width: 60px;
     height: 10px;
     background: black;
     position: absolute;
-    top: 175px;
-    right: -65px;
+    top: 132px;
+    right: -30px;
     rotate: 60deg;
     transform-origin: left bottom;
   }

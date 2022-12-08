@@ -143,13 +143,15 @@ export function HangmanDrawing({ numberOfGuesses }: HangmanDrawingProps) {
         {/* {numberOfGuesses === 6 && FACIAL_EXPRESSION} */}
         {BODY_PARTS.slice(0, numberOfGuesses)}
 
+      </div>
+      <div id="gallows__container"> 
         {/* Gallows */}
-        <div id={styles.gallows__small__vertical} />
         <div id={styles.gallows__top__horizontal} />
+        <div id={styles.gallows__small__vertical} />
         <div id={styles.gallows__middle__vertical} />
         <div id={styles.gallows__bottom__horizontal} />
-
       </div>
+
     </div>
   )
 }

@@ -54,6 +54,13 @@ const revealDiv = {
   marginBottom: "-1rem"
 } as React.CSSProperties
 
+const wordRevealText = {
+  fontSize: "1rem", 
+  textAlign: "center", 
+  marginBottom: "-1rem", 
+  color: "darkred"
+} as React.CSSProperties
+
 // ======================
 
 function App() {
@@ -188,7 +195,7 @@ return (
         isLoser && 
           <div id="loser__message">
             <div id="finale__message__top">Mamaaa! I just killed a man</div>
-            <div id="finale__message__bottom">LOL 🤦🏻‍♂️ u suck - Reset to try again
+            <div id="finale__message__bottom">LOL 🤦🏻‍♂️ u suck - hit "ENTER" to reset
             </div>
           </div>
       }
@@ -227,7 +234,7 @@ return (
     {
       isLoser ? (
         <div id="game__over__word__reveal" style={revealDiv}>
-          Word was: {wordToGuess}
+          Word was: <i style={wordRevealText}>{wordToGuess}</i>
         </div>
       ) : null
     }

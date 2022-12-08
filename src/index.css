@@ -100,9 +100,12 @@ body {
   align-items: center;
 }
 
-#hangman__display,
-#hangman__container {
+#hangman__display {
   position: relative;
+}
+
+#hangman__display {
+  text-align: -webkit-center;
 }
 
 #remaining__guesses {
@@ -126,14 +129,6 @@ body {
     background-size: 100% 100%;
   }
 
-  /* #sticky__top {
-    position: sticky;
-    top: 0;
-    z-index: 1;
-    margin-top: 1.2rem;
-    margin-left: 34vw;
-  } */
-
   /* remaining__guesses on mobile */
   #remaining__guesses {
     font-size: 1.8rem;
@@ -141,12 +136,14 @@ body {
     top: 0;
     z-index: 1;
     margin-top: 1.2rem;
-    margin-left: 74vw;
+    direction: rtl;
+    margin-left: 62vw;
   }
 
   /* guessed__letter on mobile */
   #guessed__letter {
     font-size: 1.2rem;
+    /* font-variant: all-petite-caps; */
   }
 
   /* title__div on mobile */
@@ -164,19 +161,6 @@ body {
   /* finale__message__bottom on mobile */
   #finale__message__bottom {
     font-size: 1.2rem;
-  }
-
-  /* hangmanDrawing on mobile */
-  #hangman__container {
-    overflow-y: scroll;
-    overflow-x: scroll;
-  }
-
-  /* #hangman__display on mobile */
-  #hangman__display {
-    overflow-y: scroll;
-    overflow-x: scroll;
-    width: 80%;
   }
 
   /* letter__div on mobile */
@@ -201,9 +185,9 @@ body {
   #remaining__guesses {
     font-size: 1.8rem;
     position: sticky;
-    top: 0;
-    z-index: 1;
-    margin-left: 70vw;
+    margin-top: 1.2rem;
+    direction: rtl;
+    margin-left: 62vw;
   }
 
   /* letter__div on mobile */
