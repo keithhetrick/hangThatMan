@@ -40,51 +40,10 @@
   overflow-y: scroll;
   align-items: center;
 }
-/* } */
 
-/* keyboard on mobile - bp 1 */
-/* @media (max-width: 850px) {
-  .keyboard__div {
-    grid-template-columns: repeat(9, 1fr);
-  }
-} */
-
-/* keyboard on mobile - bp 2 */
+/* keyboard on mobile */
 @media (max-width: 720px) {
   .keyboard__div {
     grid-template-columns: repeat(6, 1fr);
-    overflow-x: scroll;
-    overflow-y: scroll;
-    height: 250px;
-  }
-}
-
-/* keyboard on mobile - bp 3 */
-@media (max-width: 600px) {
-  .keyboard__div {
-    grid-template-columns: repeat(6, 1fr);
-    overflow-x: scroll;
-    overflow-y: scroll;
-    height: 250px;
-  }
-}
-
-/* keyboard on mobile - bp 4 */
-@media (max-width: 412px) {
-  .keyboard__div {
-    grid-template-columns: repeat(6, 1fr);
-    overflow-x: scroll;
-    overflow-y: scroll;
-    /* height: 230px; */
-  }
-}
-
-/* keyboard on mobile - bp 4 */
-@media (max-width: 375px) {
-  .keyboard__div {
-    grid-template-columns: repeat(6, 1fr);
-    overflow-x: scroll;
-    overflow-y: scroll;
-    height: 230px;
   }
 }
