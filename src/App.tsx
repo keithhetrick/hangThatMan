@@ -139,8 +139,7 @@ const showHiddenWord = () => {
 // prompt that shows remaining guesses
 useEffect(() => {
   setRemainingGuesses(6 - incorrectLetters.length)
-  if(remainingGuesses === 0) <div>🤷</div>
-  
+  if(remainingGuesses === 0) <div>Remaing guesses: 🤷</div>
 }, [incorrectLetters, isLoser, isWinner, remainingGuesses])
 
 // prompt that displays guessed letters
@@ -212,11 +211,9 @@ return (
       {/* </select> */}
     {/* </div> */}
 
-    {/* add setRemainingGuesses in DOM */}
-
     {/* setRemainingGuesses only hidden when game has ended */}
     <div id="remaining__guesses">
-      <div>Remaing guesses: {remainingGuesses}</div>
+      <div>Remaining guesses: {remainingGuesses}</div>
     </div>
 
     {/* Word Randomizer Button */}
