@@ -47,3 +47,34 @@
     grid-template-columns: repeat(6, 1fr);
   }
 }
+/*
+@media (max-height: 1368px) { // keyboard on mobile - Surface Pro 7
+  .keyboard__div { 
+    grid-template-columns: repeat(7, 1fr);
+  }
+}
+
+@media (max-height: 1180px) { // keyboard on mobile - iPad Air & iPad Mini
+  .keyboard__div {
+    grid-template-columns: repeat(8, 1fr);
+  }
+}
+
+@media (max-height: 1000px) { // keyboard on mobile - Laptop 13"
+  .keyboard__div {
+    grid-template-columns: repeat(10, 1fr);
+  }
+}
+
+@media (max-height: 720px) { // keyboard on mobile - Surface Pro 7
+  .keyboard__div {
+    grid-template-columns: repeat(7, 1fr);
+  }
+}
+
+@media (max-height: 667px) { // keyboard on mobile - iPhone SE
+  .keyboard__div {
+    grid-template-columns: repeat(6, 1fr);
+  }
+}
+*/
