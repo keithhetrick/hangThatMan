@@ -33,7 +33,7 @@
 
 .keyboard__div {
   display: grid;
-  grid-template-columns: repeat(10, 1fr);
+  grid-template-columns: repeat(13, 1fr);
   grid-gap: 0.5rem;
   padding: 0.5rem;
   overflow-x: scroll;
