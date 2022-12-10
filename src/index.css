@@ -150,12 +150,32 @@ body {
   font-family: monospace;
 }
 
-#hangman__display {
-  position: relative;
+#letter__span {
+  border-bottom: 0.1em solid black;
 }
 
 #hangman__display {
+  position: relative;
   text-align: -webkit-center;
+}
+
+/* add "bending" effect to on hangman display */
+#hangman__display:hover {
+  transition: all 0.5s ease;
+  animation: swing 0.5s ease;
+  cursor: pointer;
+}
+
+@keyframes swing {
+  0% {
+    transform: rotate(0deg);
+  }
+  50% {
+    transform: rotate(1.5deg);
+  }
+  100% {
+    transform: rotate(0deg);
+  }
 }
 
 #remaining__guesses {

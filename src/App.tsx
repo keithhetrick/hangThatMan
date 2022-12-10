@@ -9,7 +9,7 @@ function getWord() {
 }
 
 // ======================
-// Styling for Div's
+// Styling for Div's  
 // ======================
 
 const revealDiv = {
@@ -43,19 +43,21 @@ function App() {
     return randomWord
   }
 
+  // Incorrect Letters
   const incorrectLetters = guessedLetters.filter(
     letter => !wordToGuess?.includes(letter)
   )
 
+  // Game Status
   const isLoser = incorrectLetters.length >= 6
   const isWinner = wordToGuess && wordToGuess
     .split("")
     .every(letter => guessedLetters.includes(letter))
 
+  // Add Guessed Letter
   const addGuessedLetter = useCallback(
     (letter: string) => {
       if (guessedLetters.includes(letter) || isLoser || isWinner) return
-
       setGuessedLetters(currentLetters => [...currentLetters, letter])
     },
     [guessedLetters, isWinner, isLoser]
@@ -90,6 +92,17 @@ function App() {
     }
   }, [])
 
+  // Remaining Guesses
+  useEffect(() => {
+    setRemainingGuesses(6 - incorrectLetters.length)
+  }, [incorrectLetters, isLoser, isWinner, remainingGuesses])
+
+  // Guessed Letters Display
+  const guessedLettersDisplay = () => {
+    if (guessedLetters.length === 0) return null
+    return <div>Guessed Letters: {guessedLetters.join(", ").toLowerCase()}</div>
+  }
+
   // Reset Game
   const reset = () => {
     setGuessedLetters([])
@@ -100,18 +113,6 @@ function App() {
   // Toggles Word Reveal
   const showHiddenWord = () => {
     setReveal(currentReveal => !currentReveal)
-  }
-
-  // Remaining Guesses
-  useEffect(() => {
-    setRemainingGuesses(6 - incorrectLetters.length)
-  }, [incorrectLetters, isLoser, isWinner, remainingGuesses])
-
-  // Guessed Letters Display
-  const guessedLettersDisplay = () => {
-    if (guessedLetters.length === 0) return null
-    // return guessedLetters in lowercase
-    return <div>Guessed Letters: {guessedLetters.join(", ").toLowerCase()}</div>
   }
 
 return (
@@ -221,5 +222,22 @@ return (
   </div>
   )
 }
+
+// Custom Keyboard Hook
+// export const useKeyboard = () => {
+//   const [keyboard, setKeyboard] = useState<KeyboardType[]>([])
+//   useEffect(() => {
+//     const keyboard: KeyboardType[] = []
+//     for (let i = 0; i < 26; i++) {
+//       keyboard.push({
+//         letter: String.fromCharCode(65 + i),
+//         active: false,
+//         disabled: false,
+//       })
+//     }
+//     setKeyboard(keyboard)
+//   }, [])
+//   return keyboard
+// }
 
 export default App

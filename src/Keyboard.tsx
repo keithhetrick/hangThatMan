@@ -43,7 +43,7 @@ export function Keyboard({
   disabled = false,
 }: KeyboardProps) {
   return (
-    <div className={styles.keyboard__div}>
+    <div id={styles.keyboard__div}>
       {KEYS.map(key => {
         const isActive = activeLetters.includes(key)
         const isInactive = inactiveLetters.includes(key)

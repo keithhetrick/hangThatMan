@@ -3,6 +3,7 @@ import styles from "./HangmanDrawing.module.css"
 // ======================
 // Styling for Hangman drawing - NOT BEING USED
 // ======================
+// eslint-disable-next-line
 const FACIAL_EXPRESSION = (
   <div 
     style={{
