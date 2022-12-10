@@ -35,6 +35,7 @@ function App() {
   const [guessedLetters, setGuessedLetters] = useState<string[]>([])
   const [reveal, setReveal] = useState<Boolean>(false)
   const [remainingGuesses, setRemainingGuesses] = useState<number>(6)
+  const [showConfetti, setShowConfetti] = useState<Boolean>(false)
 
   // Word Randomizer
   const wordRandomizer = () => {
@@ -117,12 +118,24 @@ function App() {
     setReveal(currentReveal => !currentReveal)
   }
 
+  // Window Size for Confetti
   const { width, height } = useWindowSize()
+
+  // Confetti Effect
+  useEffect(() => {
+    if (isWinner) {
+      setShowConfetti(true)
+      setTimeout(() => {
+        setShowConfetti(false)
+      }, 6000)
+    }
+  }, [isWinner])
 
 return (
   <div  id="main__wrapper">
     {/* Confetti when isWinner is showing */}
-    {isWinner && <Confetti width={width} height={height} />}
+    {/* {isWinner && <Confetti width={width} height={height} />} */}
+    {showConfetti && <Confetti width={width} height={height} />}
 
     {/* Welcome Message */}
     {guessedLetters.length !== 0 ? null : <h1 id="title__div">Hang...That...MAN!</h1> }
@@ -138,11 +151,11 @@ return (
       }
       {
         isLoser && 
-          <div id="loser__message">
-            <div id="finale__message__top">Mamaaa! I just killed a man</div>
-            <div id="finale__message__bottom">LOL 🤦🏻‍♂️ u suck - hit "ENTER" to reset
-            </div>
+        <div id="loser__message">
+          <div id="finale__message__top">Mamaaa! I just killed a man</div>
+          <div id="finale__message__bottom">LOL 🤦🏻‍♂️ u suck - hit "ENTER" to reset
           </div>
+        </div>
       }
     </div>
 
@@ -228,22 +241,5 @@ return (
   </div>
   )
 }
-
-// Custom Keyboard Hook
-// export const useKeyboard = () => {
-//   const [keyboard, setKeyboard] = useState<KeyboardType[]>([])
-//   useEffect(() => {
-//     const keyboard: KeyboardType[] = []
-//     for (let i = 0; i < 26; i++) {
-//       keyboard.push({
-//         letter: String.fromCharCode(65 + i),
-//         active: false,
-//         disabled: false,
-//       })
-//     }
-//     setKeyboard(keyboard)
-//   }, [])
-//   return keyboard
-// }
 
 export default App

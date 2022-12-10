@@ -118,15 +118,16 @@ body {
   font-size: 15px;
 }
 
-/* add finale__message__bottom to winner__message */
-
-#winner__message > #finale__message__top:hover {
-  transition: all 0.5s ease;
-  animation: swing 0.5s ease;
-  cursor: pointer;
-}
-
-#winner__message > #finale__message__bottom:hover {
+/* add swing */
+#winner__message > #finale__message__bottom:hover,
+#winner__message > #finale__message__top:hover,
+#loser__message > #finale__message__top:hover,
+#loser__message > #finale__message__bottom:hover,
+#game__over__word__reveal:hover,
+#guessed__letters:hover,
+#letter__span:hover,
+#remaining__guesses:hover,
+#title__div:hover {
   transition: all 0.5s ease;
   animation: swing 0.5s ease;
   cursor: pointer;
