@@ -2,12 +2,14 @@
 
 Get it right, save a life ❤️.
 
-Built with React, TypeScript & deployed on AWS.
+Built with React, TypeScript, pure CSS (with animations) & deployed on AWS.
 
 [Demo](http://18.217.74.94/)
 
-<img width="963" alt="Screen Shot 2022-12-06 at 2 00 07 AM" src="https://user-images.githubusercontent.com/104343338/205854133-98edbf17-71a5-4365-b296-0abda9bd9de4.png">
+<img width="960" alt="Screen Shot 2022-12-10 at 11 13 13 AM" src="https://user-images.githubusercontent.com/104343338/206866997-76a4df26-be4e-4189-a98b-8408601e7657.png">
 
-<img width="961" alt="Screen Shot 2022-12-06 at 11 45 31 AM" src="https://user-images.githubusercontent.com/104343338/205984280-c46f1439-9488-41bc-add2-8bdc583f52f7.png">
+<img width="961" alt="Screen Shot 2022-12-10 at 11 14 03 AM" src="https://user-images.githubusercontent.com/104343338/206867024-d6cb84c8-e15b-4634-9639-be44e92cbf57.png">
 
-<img width="960" alt="Screen Shot 2022-12-06 at 11 46 13 AM" src="https://user-images.githubusercontent.com/104343338/205984413-e5458259-2bda-4f08-8b13-2a3616178f88.png">
+<img width="960" alt="Screen Shot 2022-12-10 at 11 14 33 AM" src="https://user-images.githubusercontent.com/104343338/206867051-ee69bb26-0925-4dbc-a4e0-2b719eed0dd4.png">
+
+<img width="378" alt="Screen Shot 2022-12-10 at 11 16 53 AM" src="https://user-images.githubusercontent.com/104343338/206867139-bc83a6fa-0594-4b6d-a60c-becd3186f58d.png"> <img width="379" alt="Screen Shot 2022-12-10 at 11 16 03 AM" src="https://user-images.githubusercontent.com/104343338/206867108-af6357b3-28cf-4424-9b74-18936bdd57fb.png">
