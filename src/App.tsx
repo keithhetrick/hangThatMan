@@ -3,6 +3,8 @@ import { HangmanDrawing } from "./HangmanDrawing"
 import { HangmanWord } from "./HangmanWord"
 import { Keyboard } from "./Keyboard"
 import englishWords from "./wordLists/englishWordList.json"
+import useWindowSize from 'react-use/lib/useWindowSize'
+import Confetti from 'react-confetti'
 
 function getWord() {
   return englishWords[Math.floor(Math.random() * englishWords.length)]
@@ -115,8 +117,12 @@ function App() {
     setReveal(currentReveal => !currentReveal)
   }
 
+  const { width, height } = useWindowSize()
+
 return (
   <div  id="main__wrapper">
+    {/* Confetti when isWinner is showing */}
+    {isWinner && <Confetti width={width} height={height} />}
 
     {/* Welcome Message */}
     {guessedLetters.length !== 0 ? null : <h1 id="title__div">Hang...That...MAN!</h1> }
