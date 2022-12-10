@@ -127,7 +127,7 @@ function App() {
       setShowConfetti(true)
       setTimeout(() => {
         setShowConfetti(false)
-      }, 6000)
+      }, 7000)
     }
   }, [isWinner])
 
