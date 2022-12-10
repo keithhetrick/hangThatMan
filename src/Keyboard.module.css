@@ -24,12 +24,24 @@
 
 .btn.inactive {
   opacity: 0.3;
+  /* transition: all 1s ease;
+  rotate: 360deg; */
 }
 
 .btn:hover:not(:disabled),
 .btn:focus:not(:disabled) {
   background-color: hsl(200, 100%, 75%);
 }
+
+/* rotate keyboard__div  by 360 degrees */
+/* @keyframes rotate {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+} */
 
 .keyboard__div {
   display: grid;

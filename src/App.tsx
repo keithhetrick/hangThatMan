@@ -11,19 +11,6 @@ function getWord() {
 // ======================
 // Styling for Div's
 // ======================
-const mainDiv = {
-  maxWidth: "800px",
-  display: "flex",
-  flexDirection: "column",
-  gap: "1.5rem",
-  margin: "0 auto",
-  alignItems: "center",
-} as React.CSSProperties
-
-
-const keyboardDiv = {
-  alignSelf: "stretch"
-} as React.CSSProperties
 
 const revealDiv = {
   fontSize: "1rem", 
@@ -47,7 +34,7 @@ function App() {
   const [reveal, setReveal] = useState<Boolean>(false)
   const [remainingGuesses, setRemainingGuesses] = useState<number>(6)
 
-  // word randomizer button using getWord() function and resets game
+  // Word Randomizer
   const wordRandomizer = () => {
     const randomWord = getWord()
     setGuessedLetters([])
@@ -78,7 +65,7 @@ function App() {
   useEffect(() => {
     const handler = (e: KeyboardEvent) => {
       const key = e.key
-      if (!key.match(/^[a-z]$/)) return
+      if (!key.match(/^[a-zA-Z]$/)) return
       e.preventDefault()
       addGuessedLetter(key)
     }
@@ -103,48 +90,32 @@ function App() {
     }
   }, [])
 
-  // prompt that resets game
+  // Reset Game
   const reset = () => {
     setGuessedLetters([])
     setWordToGuess(getWord())
     setReveal(false)
   }
 
-  // prompt that toggles boolean value
+  // Toggles Word Reveal
   const showHiddenWord = () => {
     setReveal(currentReveal => !currentReveal)
   }
 
-  // prompt that shows remaining guesses
+  // Remaining Guesses
   useEffect(() => {
     setRemainingGuesses(6 - incorrectLetters.length)
-    if(remainingGuesses === 0) <div>Remaing guesses: 🤷</div>
   }, [incorrectLetters, isLoser, isWinner, remainingGuesses])
 
-  // prompt that displays guessed letters
+  // Guessed Letters Display
   const guessedLettersDisplay = () => {
-    if (guessedLetters.length === 0) return
-
-    return <div>Guessed Letters: {guessedLetters.join(", ")}</div>
+    if (guessedLetters.length === 0) return null
+    // return guessedLetters in lowercase
+    return <div>Guessed Letters: {guessedLetters.join(", ").toLowerCase()}</div>
   }
 
-  // reset noise
-  // const resetNoise = new Audio("https://freesound.org/data/previews/269/269026_5094889-lq.mp3")
-
-  // winner noise
-  // const winnerNoise = new Audio("https://freesound.org/data/previews/511/511484_6890478-lq.mp3")
-
-  // play winnerNoise when isWinner displays
-  // isWinner && winnerNoise.play()
-
-  // loser noise
-  // const loserNoise = new Audio("https://freesound.org/s/400581/")
-
-  // play loserNoise when isLoser displays
-  // isLoser && loserNoise.play()
-
 return (
-  <div style={mainDiv}>
+  <div  id="main__wrapper">
 
     {/* Welcome Message */}
     {guessedLetters.length !== 0 ? null : <h1 id="title__div">Hang...That...MAN!</h1> }
@@ -195,7 +166,6 @@ return (
       isWinner || isLoser ? (
         <div id="reset__button" className="button__class" onClick={() => {
             reset()
-            // resetNoise.play()
             }
           }
         >
@@ -237,7 +207,7 @@ return (
     />
     
     {/* Keyboard Component */}
-    <div id="keyboard__display" style={keyboardDiv}>
+    <div id="keyboard__display">
       <Keyboard
         disabled={isWinner || isLoser} 
         activeLetters={guessedLetters.filter(letter =>
