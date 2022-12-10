@@ -3,7 +3,7 @@ import { HangmanDrawing } from "./HangmanDrawing"
 import { HangmanWord } from "./HangmanWord"
 import { Keyboard } from "./Keyboard"
 import englishWords from "./wordLists/englishWordList.json"
-import useWindowSize from 'react-use/lib/useWindowSize'
+import {useWindowSize} from 'react-use'
 import Confetti from 'react-confetti'
 
 function getWord() {
