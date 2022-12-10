@@ -24,8 +24,10 @@
 
 .btn.inactive {
   opacity: 0.3;
-  /* transition: all 1s ease;
-  rotate: 360deg; */
+  /* transition: all 0.5s ease;
+  animation: swing 0.5s ease; */
+  transition: all 1s ease;
+  rotate: 360deg;
 }
 
 .btn:hover:not(:disabled),
@@ -34,14 +36,26 @@
 }
 
 /* rotate keyboard__div  by 360 degrees */
-/* @keyframes rotate {
+@keyframes rotate {
   from {
     transform: rotate(0deg);
   }
   to {
     transform: rotate(360deg);
   }
-} */
+}
+
+@keyframes swing {
+  0% {
+    transform: rotate(0deg);
+  }
+  50% {
+    transform: rotate(3deg);
+  }
+  100% {
+    transform: rotate(0deg);
+  }
+}
 
 .keyboard__div {
   display: grid;
